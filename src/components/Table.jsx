@@ -1,18 +1,18 @@
 const Table = () => {
   return (
     <table className="sm:text-sm md:text-md w-11/12 mx-auto sm:mx-auto xl:mx-3 xl:w-auto mt-4 text-left text-gray-500 dark:text-gray-400 shadow-xl">
-      <thead className="text-[12px] sm:text-[14px] md:text-[17px] text-bold text-white bg-[#ff9901] dark:bg-gray-700 dark:text-gray-400 overflow-hidden rounded-tl-xl rounded-tr-xl">
+      <thead className="text-[12px] sm:text-[14px] md:text-[17px] text-bold text-white bg-[#ffa43f] dark:bg-gray-700 dark:text-gray-400 overflow-hidden rounded-tl-xl rounded-tr-xl">
         <tr>
-          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5 rounded-tl-xl">
+          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-5 lg:py-5 rounded-tl-xl">
             Period
           </th>
-          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5">
+          <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-5 lg:py-5 text-center">
             Number
           </th>
-          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5">
+          <th scope="col" className="px-2 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-5 lg:py-5 text-center">
             Big Small
           </th>
-          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5  rounded-tr-xl">
+          <th scope="col" className="px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-5 lg:py-5  rounded-tr-xl">
             Color
           </th>
         </tr>
@@ -28,7 +28,7 @@ const Table = () => {
           <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">
             <span className="text-[20px] md:text-[40px] font-bold text-center">8</span>
           </td>
-          <td className="px-2 py-1 sm:px-6 sm:py-4">Big</td>
+          <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">Big</td>
           <td className="px-2 py-1 sm:px-6 sm:py-4">
             <div className="h-5 w-5 rounded-full bg-red-600"></div>
           </td>
@@ -43,7 +43,7 @@ const Table = () => {
           <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">
             <span className="text-[20px] md:text-[40px] font-bold text-center">8</span>
           </td>
-          <td className="px-2 py-1 sm:px-6 sm:py-4">Big</td>
+          <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">Big</td>
           <td className="px-2 py-1 sm:px-6 sm:py-4">
             <div className="h-5 w-5 rounded-full bg-red-600"></div>
           </td>
@@ -58,7 +58,7 @@ const Table = () => {
           <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">
             <span className="text-[20px] md:text-[40px] font-bold text-center">8</span>
           </td>
-          <td className="px-2 py-1 sm:px-6 sm:py-4">Small</td>
+          <td className="px-2 py-1 sm:px-6 sm:py-4 text-center">Small</td>
           <td className="px-2 py-1 sm:px-6 sm:py-4">
             <div className="h-5 w-5 rounded-full bg-red-600"></div>
           </td>

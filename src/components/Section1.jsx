@@ -1,14 +1,36 @@
 import React, { useState } from "react";
 import Table from "./Table";
 import {
-  ArrowPathRoundedSquareIcon,
-  WalletIcon,
   SpeakerWaveIcon,
-  ClockIcon,
   BookmarkIcon,
-  FireIcon,
 } from "@heroicons/react/24/outline";
 import Ball from "../assets/ball.png";
+import Ball1 from "../assets/ball1.png";
+import Ball2 from "../assets/ball2.png";
+import Ball3 from "../assets/ball3.png";
+import Ball4 from "../assets/ball4.png";
+import Ball5 from "../assets/ball5.png";
+import Ball6 from "../assets/ball6.png";
+import Ball7 from "../assets/ball7.png";
+import Ball8 from "../assets/ball8.png";
+import Ball9 from "../assets/ball9.png";
+import ClockGray from "../assets/clockgray.png";
+import ClockYellow from "../assets/clockyellow.png";
+import Wallet from "../assets/wallet.png";
+import Path from "../assets/path.png";
+
+const balls = [
+  Ball,
+  Ball1,
+  Ball2,
+  Ball3,
+  Ball4,
+  Ball5,
+  Ball6,
+  Ball7,
+  Ball8,
+  Ball9,
+];
 
 const Section1 = () => {
   const [active, setActive] = useState(0);
@@ -25,18 +47,14 @@ const Section1 = () => {
             </div>
             <div className="col-span-5 flex flex-row items-center">
               <span className="ml-10">
-                <ArrowPathRoundedSquareIcon
-                  height={22}
-                  width={22}
-                  color="gray"
-                />
+              <img alt="" src={Path} className="h-[25px] w-[25px] cursor-pointer" />
               </span>
             </div>
           </div>
 
           <div className="w-full grid grid-cols-12 gap-5">
             <div className="col-span-5 flex flex-row justify-end">
-              <WalletIcon color="orange" height={25} width={25} />
+              <img alt="" src={Wallet} className="h-[25px] w-[25px]" />
             </div>
             <div className="col-span-7">
               <span className="text-md font-semibold">Wallet Balance</span>
@@ -64,9 +82,32 @@ const Section1 = () => {
             </p>
           </div>
           <div className="col-span-3 flex flex-row justify-end">
-            <button className="px-2 sm:px-3 py-2 bg-[#ff9901] flex flex-row gap-2 rounded-full justify-center text-white text-sm">
+            <button className="px-2 sm:px-3 py-2 bg-[#ff9901] flex flex-row gap-1 sm:gap-2 items-center rounded-full justify-center text-white text-sm">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_589_37755)">
+                  <path
+                    d="M24 0H0V24H24V0Z"
+                    fill="white"
+                    fillOpacity="0.01"
+                  ></path>
+                  <path
+                    d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z"
+                    fill="white"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_589_37755">
+                    <rect width="24" height="24" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
               <span>Details</span>
-              <FireIcon height={20} width={20} color="white" />
             </button>
           </div>
         </div>
@@ -79,19 +120,28 @@ const Section1 = () => {
               }}
               className={`${
                 active === index
-                  ? "bg-gradient-to-b from-[#ff9901] to-white border border-yellow-600 rounded-xl text-yellow-700"
+                  ? "bg-gradient-to-b from-[#ebab4a] to-white border border-yellow-600 rounded-xl text-yellow-700"
                   : "bg-white text-gray-400"
               } bg-white flex flex-col items-center justify-center h-[7rem]  cursor-pointer text-sm sm:font-semibold`}
               key={index}
             >
               <div className="">
-                <ClockIcon
-                  className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px]"
-                  color={active === index ? "white" : "text-gray-400"}
-                />
+                {active === index ? (
+                  <img
+                    alt=""
+                    src={ClockYellow}
+                    className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px]"
+                  />
+                ) : (
+                  <img
+                    alt=""
+                    src={ClockGray}
+                    className="h-[45px] w-[45px] sm:h-[55px] sm:w-[55px]"
+                  />
+                )}
               </div>
               <span>Win Go</span>
-              <span>1 Min</span>
+              <span>{index + 1} Min</span>
             </div>
           ))}
         </div>
@@ -106,10 +156,10 @@ const Section1 = () => {
             </button>
             <span>Win Go 1Min</span>
             <div className="grid grid-cols-5 gap-2">
-              {[0, 0, 0, 0, 0].map((item, index) => {
+              {balls.slice(0, 5).map((item, index) => {
                 return (
                   <div key={index} className="">
-                    <img className="w-20" alt="" src={Ball} />
+                    <img className="w-20" alt="" src={item} />
                   </div>
                 );
               })}
@@ -145,22 +195,22 @@ const Section1 = () => {
 
         <div className="px-3 py-5 rounded-xl bg-white flex flex-col gap-5">
           <div className="grid grid-cols-3 gap-1 sm:gap-10">
-            <button className="bg-green-600 rounded-tr-lg rounded-bl-lg px-8 py-2 font-bold text-white text-center">
+            <button className="bg-[#40ad72] rounded-tr-lg rounded-bl-lg px-7 py-2 md:py-3 md:px-9 md:text-xl font-bold text-white text-center">
               Green
             </button>
-            <button className="bg-purple-600 rounded-lg px-8 py-2 font-bold text-white text-center">
+            <button className="bg-[#b659fe] rounded-lg px-7 py-2 md:py-3 md:px-9 md:text-xl font-bold text-white text-center">
               Violet
             </button>
-            <button className="bg-red-500 rounded-tl-lg rounded-br-lg px-8 py-2 font-bold text-white text-center">
+            <button className="bg-[#fd565c] rounded-tl-lg rounded-br-lg px-7 py-2 md:py-3 md:px-9 md:text-xl font-bold text-white text-center">
               Red
             </button>
           </div>
 
           <div className="grid grid-cols-5 bg-[#eee] p-3 rounded-lg gap-3">
-            {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((item, index) => {
+            {balls.map((item, index) => {
               return (
                 <div className="" key={index}>
-                  <img alt="" src={Ball} className="w-20" />
+                  <img alt="" src={item} className="w-20" />
                 </div>
               );
             })}
@@ -173,19 +223,20 @@ const Section1 = () => {
               </button>
             </div>
             <div className="col-span-12 xl:col-span-9 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-2">
-              {[0, 0, 0, 0, 0, 0].map((_, index) => {
-                let count = 0;
+              {["X1", "X5", "X10", "X20", "X50", "X100"].map((_, index) => {
                 return (
                   <div
                     onClick={() => {
                       setActiveSize(index);
                     }}
                     className={`p-2 ${
-                      activeSize === index ? "bg-green-400 text-white" : " bg-gray-200"
+                      activeSize === index
+                        ? "bg-[#40ad72] text-white"
+                        : " bg-gray-200"
                     } lg:cols-span-2 col-span-1 rounded-lg cursor-pointer text-center`}
                     key={index}
                   >
-                    <span>XL{(count += 10)}</span>
+                    <span>{_}</span>
                   </div>
                 );
               })}
@@ -193,10 +244,10 @@ const Section1 = () => {
           </div>
 
           <div className="grid grid-cols-2">
-            <button className="bg-[#ff9901] px-2 py-3 rounded-tl-full rounded-bl-full text-xl font-bold text-white">
+            <button className="bg-[#ffa82e] px-2 py-3 rounded-tl-full rounded-bl-full text-xl font-bold text-white">
               Big
             </button>
-            <button className="bg-blue-400 px-2 py-3 rounded-tr-full rounded-br-full text-xl font-bold text-white">
+            <button className="bg-[#6da7f4] px-2 py-3 rounded-tr-full rounded-br-full text-xl font-bold text-white">
               Small
             </button>
           </div>
@@ -210,9 +261,9 @@ const Section1 = () => {
               }}
               className={`${
                 activeTab === 1
-                  ? "bg-[#ff9901] text-white"
+                  ? "bg-gradient-to-b from-[#E57201] to-[#E57201] text-white"
                   : "bg-[#e8e7e8] text-black"
-              } rounded-lg  px-6 sm:px-8 py-2.5 text-sm sm:font-semibold`}
+              } rounded-lg  px-5 sm:px-8 py-2.5 text-sm sm:font-semibold md:text-xl`}
             >
               Game History
             </button>
@@ -222,9 +273,9 @@ const Section1 = () => {
               }}
               className={`${
                 activeTab === 2
-                  ? "bg-[#ff9901] text-white"
+                  ? "bg-gradient-to-b from-[#E57201] to-[#E57201] text-white"
                   : "bg-[#e8e7e8] text-black"
-              } rounded-lg  px-6 sm:px-8 py-2.5 text-sm sm:font-semibold`}
+              } rounded-lg  px-6 sm:px-8 py-2.5 text-sm sm:font-semibold md:text-xl`}
             >
               Chart
             </button>
@@ -234,15 +285,16 @@ const Section1 = () => {
               }}
               className={`${
                 activeTab === 3
-                  ? "bg-[#ff9901] text-white"
+                  ? "bg-gradient-to-b from-[#E57201] to-[#E57201] text-white"
                   : "bg-[#e8e7e8] text-black"
-              } rounded-lg  px-6 sm:px-8 py-2.5 text-sm sm:font-semibold`}
+              } rounded-lg  px-6 sm:px-8 py-2.5 text-sm sm:font-semibold md:text-xl`}
             >
               Green
             </button>
           </div>
         </div>
       </div>
+
       <Table />
     </>
   );
